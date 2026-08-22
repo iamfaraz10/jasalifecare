@@ -1,279 +1,628 @@
-document.addEventListener("DOMContentLoaded", function () {
+import { products } from "./products.js";
 
-    const globeContainer = document.getElementById("globe");
+document.addEventListener("DOMContentLoaded", () => {
 
-    if (!globeContainer) {
-        console.error("Globe container not found.");
+    // =====================================================
+    // ELEMENTS
+    // =====================================================
+
+    const searchInput = document.getElementById("productSearch");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const formFilter = document.getElementById("formFilter");
+    const dosageFilter = document.getElementById("dosageFilter");
+    const clearFilters = document.getElementById("clearFilters");
+
+    const tableBody = document.getElementById("productTableBody");
+    const noProducts = document.getElementById("noProducts");
+    const pagination = document.getElementById("pagination");
+
+    const resultsText = document.getElementById("resultsText");
+
+    const totalProducts = document.getElementById("totalProducts");
+    const totalCategories = document.getElementById("totalCategories");
+    const totalForms = document.getElementById("totalForms");
+    const totalStrengths = document.getElementById("totalStrengths");
+
+
+    // =====================================================
+    // SETTINGS
+    // =====================================================
+
+    const PRODUCTS_PER_PAGE = 20;
+
+    let currentPage = 1;
+
+    let filteredProducts = [...products];
+
+
+    // =====================================================
+    // CHECK PRODUCT DATA
+    // =====================================================
+
+    console.log("Jasa Lifecare products loaded:", products.length);
+
+    if (!Array.isArray(products)) {
+        console.error("Products data is not an array.");
         return;
     }
 
-    if (typeof Globe === "undefined") {
-        console.error("Globe.gl library did not load.");
-        return;
-    }
 
+    // =====================================================
+    // HELPER
+    // =====================================================
 
-    /* =================================
-       SETTINGS
-    ================================= */
+    function cleanValue(value) {
 
-    let selectedContinent = "Asia";
-
-    const GREEN = "#238B6B";
-    const GRAY = "#B9BEC2";
-    const BORDER = "#FFFFFF";
-
-
-    /* =================================
-       CREATE GLOBE
-    ================================= */
-
-    const globe = Globe()
-        (globeContainer)
-
-        .width(360)
-        .height(360)
-
-        .backgroundColor("rgba(0,0,0,0)")
-
-        .showAtmosphere(true)
-        .atmosphereColor("#B8C0C4")
-        .atmosphereAltitude(0.08)
-
-        .showGraticules(false)
-
-        .polygonAltitude(0.006)
-
-        .polygonStrokeColor(() => BORDER)
-
-        .polygonSideColor(() => "rgba(100,100,100,0.25)")
-
-        .polygonCapColor(country => {
-
-            const continent =
-                country.properties.CONTINENT;
-
-            return continent === selectedContinent
-                ? GREEN
-                : GRAY;
-        });
-
-
-    /* =================================
-       LOAD COUNTRY DATA
-    ================================= */
-
-    fetch(
-        "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson"
-    )
-
-    .then(response => {
-
-        if (!response.ok) {
-            throw new Error(
-                "Country data could not be loaded."
-            );
+        if (value === null || value === undefined) {
+            return "";
         }
 
-        return response.json();
-
-    })
-
-    .then(data => {
-
-        console.log(
-            "Countries loaded:",
-            data.features.length
-        );
+        return String(value).trim();
+    }
 
 
-        globe
-            .polygonsData(data.features)
+    // =====================================================
+    // GET UNIQUE VALUES
+    // =====================================================
 
-            .polygonLabel(country => {
+    function getUniqueValues(key) {
 
-                return `
-                    <div style="
-                        font-family: Arial, sans-serif;
-                        font-size: 13px;
-                        color: #123653;
-                        background: white;
-                        padding: 6px 9px;
-                        border-radius: 4px;
-                    ">
-                        ${country.properties.ADMIN}
-                    </div>
-                `;
-
+        return [
+            ...new Set(
+                products
+                    .map(product => cleanValue(product[key]))
+                    .filter(value => value !== "")
+            )
+        ].sort((a, b) =>
+            a.localeCompare(b, undefined, {
+                numeric: true,
+                sensitivity: "base"
             })
-
-            .onPolygonClick(country => {
-
-                const continent =
-                    country.properties.CONTINENT;
-
-                if (continent) {
-
-                    selectContinent(
-                        continent
-                    );
-
-                }
-
-            });
-
-    })
-
-    .catch(error => {
-
-        console.error(
-            "Globe country-data error:",
-            error
         );
-
-    });
-
-
-    /* =================================
-       CONTINENT BUTTONS
-    ================================= */
-
-    const buttons =
-        document.querySelectorAll(".continent");
+    }
 
 
-    buttons.forEach(button => {
+    // =====================================================
+    // POPULATE FILTER
+    // =====================================================
 
-        button.addEventListener(
-            "click",
-            function () {
+    function populateFilter(selectElement, values, defaultText) {
 
-                let continent =
-                    this.dataset.continent;
+        if (!selectElement) return;
 
-                selectContinent(
-                    continent
-                );
+        selectElement.innerHTML = "";
 
-            }
-        );
+        const defaultOption = document.createElement("option");
 
-    });
+        defaultOption.value = "";
+        defaultOption.textContent = defaultText;
+
+        selectElement.appendChild(defaultOption);
+
+        values.forEach(value => {
+
+            const option = document.createElement("option");
+
+            option.value = value;
+            option.textContent = value;
+
+            selectElement.appendChild(option);
+
+        });
+    }
 
 
-    /* =================================
-       SELECT CONTINENT
-    ================================= */
+    // =====================================================
+    // POPULATE FILTERS
+    // =====================================================
 
-    function selectContinent(continent) {
+    populateFilter(
+        categoryFilter,
+        getUniqueValues("category"),
+        "Category"
+    );
 
-        selectedContinent = continent;
+    populateFilter(
+        formFilter,
+        getUniqueValues("form"),
+        "Form"
+    );
+
+    populateFilter(
+        dosageFilter,
+        getUniqueValues("dosage"),
+        "Dosage"
+    );
 
 
-        /* Update buttons */
+    // =====================================================
+    // STATISTICS
+    // =====================================================
 
-        buttons.forEach(button => {
+    function updateStatistics() {
 
-            button.classList.remove(
-                "active"
+        if (totalProducts) {
+            totalProducts.textContent = products.length;
+        }
+
+        if (totalCategories) {
+            totalCategories.textContent =
+                getUniqueValues("category").length;
+        }
+
+        if (totalForms) {
+            totalForms.textContent =
+                getUniqueValues("form").length;
+        }
+
+        if (totalStrengths) {
+            totalStrengths.textContent =
+                getUniqueValues("dosage").length;
+        }
+    }
+
+
+    updateStatistics();
+
+
+    // =====================================================
+    // FILTER PRODUCTS
+    // =====================================================
+
+    function filterProducts() {
+
+        const searchTerm =
+            cleanValue(searchInput?.value).toLowerCase();
+
+        const selectedCategory =
+            cleanValue(categoryFilter?.value);
+
+        const selectedForm =
+            cleanValue(formFilter?.value);
+
+        const selectedDosage =
+            cleanValue(dosageFilter?.value);
+
+
+        filteredProducts = products.filter(product => {
+
+            const name =
+                cleanValue(product.name).toLowerCase();
+
+            const form =
+                cleanValue(product.form);
+
+            const category =
+                cleanValue(product.category);
+
+            const dosage =
+                cleanValue(product.dosage);
+
+            const casId =
+                cleanValue(product.casId).toLowerCase();
+
+
+            // Search across all important fields
+
+            const matchesSearch =
+                searchTerm === "" ||
+                name.includes(searchTerm) ||
+                form.toLowerCase().includes(searchTerm) ||
+                category.toLowerCase().includes(searchTerm) ||
+                dosage.toLowerCase().includes(searchTerm) ||
+                casId.includes(searchTerm);
+
+
+            const matchesCategory =
+                selectedCategory === "" ||
+                category === selectedCategory;
+
+
+            const matchesForm =
+                selectedForm === "" ||
+                form === selectedForm;
+
+
+            const matchesDosage =
+                selectedDosage === "" ||
+                dosage === selectedDosage;
+
+
+            return (
+                matchesSearch &&
+                matchesCategory &&
+                matchesForm &&
+                matchesDosage
             );
 
-            if (
-                button.dataset.continent ===
-                continent
-            ) {
+        });
 
-                button.classList.add(
-                    "active"
-                );
+
+        currentPage = 1;
+
+        renderProducts();
+
+    }
+
+
+    // =====================================================
+    // CREATE TABLE ROW
+    // =====================================================
+
+    function createProductRow(product) {
+
+        const row = document.createElement("tr");
+
+
+        const nameCell = document.createElement("td");
+        nameCell.textContent = cleanValue(product.name);
+
+
+        const formCell = document.createElement("td");
+        formCell.textContent = cleanValue(product.form);
+
+
+        const categoryCell = document.createElement("td");
+        categoryCell.textContent = cleanValue(product.category);
+
+
+        const dosageCell = document.createElement("td");
+        dosageCell.textContent = cleanValue(product.dosage);
+
+
+        const casCell = document.createElement("td");
+        casCell.textContent = cleanValue(product.casId);
+
+
+        row.appendChild(nameCell);
+        row.appendChild(formCell);
+        row.appendChild(categoryCell);
+        row.appendChild(dosageCell);
+        row.appendChild(casCell);
+
+
+        return row;
+    }
+
+
+    // =====================================================
+    // RENDER PRODUCTS
+    // =====================================================
+
+    function renderProducts() {
+
+        tableBody.innerHTML = "";
+
+        pagination.innerHTML = "";
+
+
+        const totalResults = filteredProducts.length;
+
+        const totalPages =
+            Math.ceil(totalResults / PRODUCTS_PER_PAGE);
+
+
+        // -------------------------------------------------
+        // NO RESULTS
+        // -------------------------------------------------
+
+        if (totalResults === 0) {
+
+            noProducts.style.display = "block";
+
+            tableBody.parentElement.style.display = "none";
+
+            resultsText.textContent = "No products found";
+
+            return;
+        }
+
+
+        // -------------------------------------------------
+        // SHOW TABLE
+        // -------------------------------------------------
+
+        noProducts.style.display = "none";
+
+        tableBody.parentElement.style.display = "table";
+
+
+        // -------------------------------------------------
+        // CURRENT PAGE
+        // -------------------------------------------------
+
+        if (currentPage > totalPages) {
+            currentPage = totalPages;
+        }
+
+
+        const startIndex =
+            (currentPage - 1) * PRODUCTS_PER_PAGE;
+
+        const endIndex =
+            startIndex + PRODUCTS_PER_PAGE;
+
+
+        const pageProducts =
+            filteredProducts.slice(startIndex, endIndex);
+
+
+        // -------------------------------------------------
+        // ADD ROWS
+        // -------------------------------------------------
+
+        pageProducts.forEach(product => {
+
+            const row = createProductRow(product);
+
+            tableBody.appendChild(row);
+
+        });
+
+
+        // -------------------------------------------------
+        // RESULTS TEXT
+        // -------------------------------------------------
+
+        resultsText.textContent =
+            `Showing ${startIndex + 1}-${Math.min(endIndex, totalResults)} of ${totalResults} products`;
+
+
+        // -------------------------------------------------
+        // PAGINATION
+        // -------------------------------------------------
+
+        renderPagination(totalPages);
+
+    }
+
+
+    // =====================================================
+    // PAGINATION
+    // =====================================================
+
+    function renderPagination(totalPages) {
+
+        if (totalPages <= 1) {
+            return;
+        }
+
+
+        // Previous button
+
+        const previousButton =
+            document.createElement("button");
+
+        previousButton.textContent = "← Previous";
+
+        previousButton.type = "button";
+
+        previousButton.disabled = currentPage === 1;
+
+        previousButton.addEventListener("click", () => {
+
+            if (currentPage > 1) {
+
+                currentPage--;
+
+                renderProducts();
+
+                scrollToTable();
 
             }
 
         });
 
 
-        /* Update globe colors */
+        pagination.appendChild(previousButton);
 
-        globe.polygonCapColor(country => {
 
-            const countryContinent =
-                country.properties.CONTINENT;
+        // Page buttons
 
-            return countryContinent ===
-                selectedContinent
-                ? GREEN
-                : GRAY;
+        const maxVisiblePages = 7;
+
+        let startPage =
+            Math.max(1, currentPage - 3);
+
+        let endPage =
+            Math.min(
+                totalPages,
+                startPage + maxVisiblePages - 1
+            );
+
+
+        if (endPage - startPage < maxVisiblePages - 1) {
+
+            startPage =
+                Math.max(
+                    1,
+                    endPage - maxVisiblePages + 1
+                );
+
+        }
+
+
+        for (
+            let page = startPage;
+            page <= endPage;
+            page++
+        ) {
+
+            const pageButton =
+                document.createElement("button");
+
+            pageButton.textContent = page;
+
+            pageButton.type = "button";
+
+            if (page === currentPage) {
+                pageButton.classList.add("active");
+            }
+
+
+            pageButton.addEventListener("click", () => {
+
+                currentPage = page;
+
+                renderProducts();
+
+                scrollToTable();
+
+            });
+
+
+            pagination.appendChild(pageButton);
+
+        }
+
+
+        // Next button
+
+        const nextButton =
+            document.createElement("button");
+
+        nextButton.textContent = "Next →";
+
+        nextButton.type = "button";
+
+        nextButton.disabled =
+            currentPage === totalPages;
+
+
+        nextButton.addEventListener("click", () => {
+
+            if (currentPage < totalPages) {
+
+                currentPage++;
+
+                renderProducts();
+
+                scrollToTable();
+
+            }
+
+        });
+
+
+        pagination.appendChild(nextButton);
+
+    }
+
+
+    // =====================================================
+    // SCROLL TO TABLE
+    // =====================================================
+
+    function scrollToTable() {
+
+        const table =
+            document.querySelector(".product-table-wrapper");
+
+        if (!table) return;
+
+
+        const top =
+            table.getBoundingClientRect().top +
+            window.scrollY -
+            120;
+
+
+        window.scrollTo({
+            top: top,
+            behavior: "smooth"
+        });
+
+    }
+
+
+    // =====================================================
+    // SEARCH
+    // =====================================================
+
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "input",
+            filterProducts
+        );
+
+    }
+
+
+    // =====================================================
+    // FILTER EVENTS
+    // =====================================================
+
+    if (categoryFilter) {
+
+        categoryFilter.addEventListener(
+            "change",
+            filterProducts
+        );
+
+    }
+
+
+    if (formFilter) {
+
+        formFilter.addEventListener(
+            "change",
+            filterProducts
+        );
+
+    }
+
+
+    if (dosageFilter) {
+
+        dosageFilter.addEventListener(
+            "change",
+            filterProducts
+        );
+
+    }
+
+
+    // =====================================================
+    // CLEAR FILTERS
+    // =====================================================
+
+    if (clearFilters) {
+
+        clearFilters.addEventListener("click", () => {
+
+            if (searchInput) {
+                searchInput.value = "";
+            }
+
+            if (categoryFilter) {
+                categoryFilter.value = "";
+            }
+
+            if (formFilter) {
+                formFilter.value = "";
+            }
+
+            if (dosageFilter) {
+                dosageFilter.value = "";
+            }
+
+
+            filteredProducts = [...products];
+
+            currentPage = 1;
+
+            renderProducts();
 
         });
 
     }
 
 
-    /* =================================
-       INITIAL STATE
-    ================================= */
+    // =====================================================
+    // INITIAL RENDER
+    // =====================================================
 
-    selectContinent("Asia");
-
-
-    /* =================================
-       AUTO ROTATION
-    ================================= */
-
-    globe.controls().autoRotate = true;
-    globe.controls().autoRotateSpeed = 0.35;
-
-
-    console.log(
-        "Interactive globe initialized."
-    );
-
-})/* =========================================
-   RESEARCH / MANUFACTURING TABS
-========================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const tabs = document.querySelectorAll(".capability-tab");
-    const panels = document.querySelectorAll(".capability-panel");
-
-
-    tabs.forEach(function (tab) {
-
-        tab.addEventListener("click", function () {
-
-            const selectedTab = this.getAttribute("data-tab");
-
-
-            /* Remove active from all tabs */
-            tabs.forEach(function (item) {
-                item.classList.remove("active");
-            });
-
-
-            /* Hide all panels */
-            panels.forEach(function (panel) {
-                panel.classList.remove("active");
-            });
-
-
-            /* Activate clicked tab */
-            this.classList.add("active");
-
-
-            /* Show matching panel */
-            const selectedPanel =
-                document.getElementById(
-                    selectedTab + "-panel"
-                );
-
-
-            if (selectedPanel) {
-                selectedPanel.classList.add("active");
-            }
-
-        });
-
-    });
+    renderProducts();
 
 });

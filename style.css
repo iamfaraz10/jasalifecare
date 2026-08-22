@@ -1875,4 +1875,2594 @@ button {
         font-size: 16px;
     }
 
+}/* =========================================================
+   JASA LIFECARE FOOTER
+========================================================= */
+
+.site-footer {
+    width: 100%;
+    background: #241b16;
+    color: #ffffff;
+    border-top: 5px solid #ff6b2c;
+    margin-top: 0;
+}
+
+.footer-container {
+    width: min(1180px, calc(100% - 80px));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.3fr 1.1fr;
+
+    gap: 70px;
+
+    padding: 70px 0 60px;
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h4 {
+    margin: 0 0 24px;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 21px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #ff6b2c;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-brand {
+    align-items: flex-start;
+}
+
+.footer-logo {
+    width: 150px;
+    height: auto;
+
+    object-fit: contain;
+
+    margin-bottom: 28px;
+}
+
+.footer-brand h3 {
+    margin: 0 0 8px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 18px;
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+.footer-brand p {
+    margin: 0;
+
+    max-width: 280px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+    line-height: 1.65;
+
+    color: #eeeeee;
+}
+
+
+/* =========================================================
+   QUICK LINKS
+========================================================= */
+
+.footer-column > a:not(.footer-btn) {
+    display: block;
+
+    width: fit-content;
+
+    margin-bottom: 13px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+    line-height: 1.4;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.footer-column > a:not(.footer-btn):hover {
+    color: #ff6b2c;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.footer-contact p {
+    margin: 0 0 18px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+    line-height: 1.5;
+
+    color: #eeeeee;
+}
+
+.footer-contact strong {
+    color: #ffffff;
+}
+
+.footer-contact a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.footer-contact a:hover {
+    color: #ff6b2c;
+}
+
+
+/* =========================================================
+   RESOURCES BUTTONS
+========================================================= */
+
+.footer-btn {
+    width: 100%;
+
+    min-height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    padding: 12px 20px;
+
+    margin-bottom: 14px;
+
+    border-radius: 25px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Orange button */
+
+.footer-btn-primary {
+    background: #ff6b2c;
+
+    color: #ffffff;
+
+    border: 1px solid #ff6b2c;
+}
+
+.footer-btn-primary:hover {
+    background: #ff824c;
+
+    border-color: #ff824c;
+}
+
+
+/* Dark outlined button */
+
+.footer-btn-secondary {
+    background: transparent;
+
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.footer-bottom {
+    width: 100%;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: #1c1511;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px 20px;
+
+    box-sizing: border-box;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    color: #eeeeee;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   MOBILE FOOTER
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .footer-container {
+        width: calc(100% - 40px);
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 45px 35px;
+
+        padding: 55px 0 45px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .footer-container {
+        width: calc(100% - 40px);
+
+        grid-template-columns: 1fr;
+
+        gap: 38px;
+
+        padding: 50px 0 40px;
+    }
+
+
+    .footer-logo {
+        width: 135px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .footer-column h4 {
+        font-size: 19px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .footer-brand p {
+        max-width: 100%;
+
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+
+    .footer-column > a:not(.footer-btn) {
+        font-size: 15px;
+
+        margin-bottom: 11px;
+    }
+
+
+    .footer-contact p {
+        font-size: 15px;
+
+        line-height: 1.55;
+    }
+
+
+    .footer-btn {
+        max-width: 100%;
+
+        font-size: 15px;
+    }
+
+
+    .footer-bottom {
+        padding: 18px 15px;
+    }
+
+
+    .footer-bottom p {
+        font-size: 13px;
+    }
+
+}/* =========================================================
+   REAL HERO WATER CANVAS
+   ========================================================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Water canvas */
+
+.hero-water-canvas {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+/* Keep existing dark overlay above the water */
+
+.hero-overlay {
+    position: absolute;
+    z-index: 1;
+}
+
+/* Keep all hero content sharp */
+
+.hero-content,
+.hero-scroll {
+    position: relative;
+    z-index: 2;
+}/* ==========================================================
+   HERO WATER RIPPLE
+   ========================================================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Water canvas */
+
+#hero-water-canvas {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* Dark overlay */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* Hero text */
+
+.hero-content,
+.hero-scroll {
+    position: relative;
+
+    z-index: 3;
+}/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.contact-section {
+    background: #fdf8f4;
+    padding: 90px 0;
+    width: 100%;
+}
+
+
+.contact-container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.contact-header {
+    margin-bottom: 40px;
+}
+
+
+.contact-header h2 {
+    margin: 0 0 8px;
+    font-family: "Times New Roman", serif;
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #30231d;
+}
+
+
+.contact-header p {
+    margin: 0;
+    max-width: 700px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #7b6b61;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 34px;
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   FORM BOX
+========================================================= */
+
+.contact-form-box {
+    background: #ffffff;
+    border: 1px solid #eadfd8;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(48, 35, 29, 0.08);
+}
+
+
+.contact-form-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+
+.contact-form-title h3 {
+    margin: 0;
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    color: #30231d;
+}
+
+
+.contact-form-title span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #f36b21;
+}
+
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.contact-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+
+.contact-field {
+    margin-bottom: 18px;
+}
+
+
+.contact-field label {
+    display: block;
+    margin-bottom: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #6e5c52;
+}
+
+
+.contact-field input,
+.contact-field select,
+.contact-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e8cdbd;
+    border-radius: 10px;
+    background: #fffaf7;
+    padding: 12px 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #30231d;
+    outline: none;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+
+.contact-field input {
+    height: 38px;
+}
+
+
+.contact-field select {
+    height: 38px;
+}
+
+
+.contact-field textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+.contact-field input:focus,
+.contact-field select:focus,
+.contact-field textarea:focus {
+    border-color: #f36b21;
+    box-shadow: 0 0 0 3px rgba(243, 107, 33, 0.10);
+}
+
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+    color: #b9aaa2;
+}
+
+
+/* =========================================================
+   FORM BOTTOM
+========================================================= */
+
+.contact-form-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+
+.required-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #d9a08a;
+}
+
+
+.contact-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+
+.contact-clear,
+.contact-submit {
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+.contact-clear {
+    background: #ffffff;
+    border: 1px solid #e8cdbd;
+    color: #6e5c52;
+}
+
+
+.contact-clear:hover {
+    border-color: #f36b21;
+    color: #f36b21;
+}
+
+
+.contact-submit {
+    border: none;
+    color: #ffffff;
+    background: linear-gradient(
+        90deg,
+        #f36b21,
+        #f6a06e
+    );
+}
+
+
+.contact-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(243, 107, 33, 0.20);
+}
+
+
+/* =========================================================
+   CONTACT INFORMATION BOX
+========================================================= */
+
+.contact-info-box {
+    position: relative;
+    min-height: 510px;
+    overflow: hidden;
+    border-radius: 10px;
+    background:
+        linear-gradient(
+            rgba(48, 35, 29, 0.35),
+            rgba(48, 35, 29, 0.82)
+        ),
+        url("hero.jpg.png") center center / cover no-repeat;
+    box-shadow: 0 4px 12px rgba(48, 35, 29, 0.12);
+}
+
+
+.contact-info-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(48, 35, 29, 0.05),
+        rgba(48, 35, 29, 0.72)
+    );
+}
+
+
+.contact-info-content {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 22px;
+    z-index: 2;
+    color: #ffffff;
+}
+
+
+.contact-info-content h3 {
+    margin: 0 0 20px;
+    font-family: "Times New Roman", serif;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+
+.contact-info-icon {
+    flex: 0 0 18px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+.contact-info-item p {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .contact-section {
+        padding: 60px 0;
+    }
+
+
+    .contact-container {
+        width: 90%;
+    }
+
+
+    .contact-header h2 {
+        font-size: 30px;
+    }
+
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .contact-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+
+    .contact-form-box {
+        padding: 22px;
+    }
+
+
+    .contact-info-box {
+        min-height: 450px;
+    }
+
+
+    .contact-form-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+
+    .contact-buttons {
+        width: 100%;
+    }
+
+
+    .contact-clear,
+    .contact-submit {
+        flex: 1;
+    }
+
+}/* =========================================================
+   JASA LIFECARE - CONTACT PAGE
+========================================================= */
+
+.contact-page {
+    background: #fdf8f4;
+    min-height: calc(100vh - 90px);
+    padding: 70px 0 80px;
+}
+
+
+.contact-page-container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.contact-page-header {
+    margin-bottom: 40px;
+}
+
+
+.contact-page-header h1 {
+    margin: 0 0 10px;
+
+    font-family:
+        "Times New Roman",
+        serif;
+
+    font-size: 38px;
+    line-height: 1.2;
+
+    color: #30231d;
+}
+
+
+.contact-page-header p {
+    max-width: 720px;
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 16px;
+    line-height: 1.6;
+
+    color: #806f64;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.contact-page-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.08fr
+        0.92fr;
+
+    gap: 34px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.contact-form-card {
+
+    background: #ffffff;
+
+    border: 1px solid #eadfd8;
+
+    padding: 28px;
+
+    box-shadow:
+        0 4px 14px
+        rgba(48, 35, 29, 0.08);
+}
+
+
+/* =========================================================
+   FORM TITLE
+========================================================= */
+
+.contact-form-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 26px;
+}
+
+
+.contact-form-heading h2 {
+
+    margin: 0;
+
+    font-family:
+        "Times New Roman",
+        serif;
+
+    font-size: 21px;
+
+    color: #30231d;
+}
+
+
+.contact-form-heading span {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #f36b21;
+}
+
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.jasa-form-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 14px;
+}
+
+
+.jasa-form-group {
+
+    margin-bottom: 18px;
+}
+
+
+.jasa-form-group label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+
+    color: #6e5c52;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.jasa-form-group input,
+.jasa-form-group select,
+.jasa-form-group textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #e8cdbd;
+
+    border-radius: 10px;
+
+    background: #fffaf7;
+
+    padding: 11px 13px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    color: #30231d;
+
+    outline: none;
+}
+
+
+.jasa-form-group input,
+.jasa-form-group select {
+
+    height: 38px;
+}
+
+
+.jasa-form-group textarea {
+
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+
+.jasa-form-group input:focus,
+.jasa-form-group select:focus,
+.jasa-form-group textarea:focus {
+
+    border-color: #f36b21;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(243, 107, 33, 0.10);
+}
+
+
+/* =========================================================
+   FORM BOTTOM
+========================================================= */
+
+.jasa-form-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 5px;
+}
+
+
+.jasa-form-bottom > span {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
+
+    color: #d49b84;
+}
+
+
+.jasa-form-buttons {
+
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.jasa-clear-button,
+.jasa-submit-button {
+
+    height: 40px;
+
+    padding: 0 20px;
+
+    border-radius: 10px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.jasa-clear-button {
+
+    background: #ffffff;
+
+    border: 1px solid #e8cdbd;
+
+    color: #6e5c52;
+}
+
+
+.jasa-submit-button {
+
+    border: none;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f36b21,
+            #f6a06e
+        );
+}
+
+
+/* =========================================================
+   RIGHT CONTACT IMAGE
+========================================================= */
+
+.jasa-contact-info {
+
+    position: relative;
+
+    min-height: 510px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 14px
+        rgba(48, 35, 29, 0.12);
+}
+
+
+.jasa-contact-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("hero.jpg.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    transform: scale(1.01);
+}
+
+
+.jasa-contact-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(48, 35, 29, 0.10),
+            rgba(48, 35, 29, 0.82)
+        );
+}
+
+
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
+
+.jasa-contact-info-content {
+
+    position: absolute;
+
+    left: 20px;
+
+    right: 20px;
+
+    bottom: 22px;
+
+    z-index: 2;
+
+    color: #ffffff;
+}
+
+
+.jasa-contact-info-content h2 {
+
+    margin: 0 0 20px;
+
+    font-family:
+        "Times New Roman",
+        serif;
+
+    font-size: 19px;
+
+    color: #ffffff;
+}
+
+
+.jasa-contact-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+}
+
+
+.jasa-contact-item span {
+
+    flex: 0 0 18px;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+.jasa-contact-item p {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .contact-page {
+
+        padding: 50px 0 60px;
+
+    }
+
+
+    .contact-page-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .jasa-form-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+    }
+
+
+    .contact-form-card {
+
+        padding: 22px;
+
+    }
+
+
+    .jasa-contact-info {
+
+        min-height: 450px;
+
+    }
+
+
+    .jasa-form-bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .jasa-form-buttons {
+
+        width: 100%;
+
+    }
+
+
+    .jasa-clear-button,
+    .jasa-submit-button {
+
+        flex: 1;
+
+    }
+
+}/* =========================================================
+   FOOTER FIX — REMOVE OVERSIZED DECORATIVE ELEMENTS
+========================================================= */
+
+.site-footer {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    overflow: hidden;
+    background: #241a15;
+}
+
+/* Remove any oversized decorative shapes */
+.site-footer::before,
+.site-footer::after,
+.footer-container::before,
+.footer-container::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Keep footer content above everything */
+.footer-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Prevent images from becoming giant */
+.site-footer img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Copyright stays normal */
+.footer-bottom {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+}/* =========================================================
+   FOOTER CONTACT — MATCH OTHER FOOTER COLUMNS
+========================================================= */
+
+.footer-contact {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 330px;
+}
+
+.footer-contact h4 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0 0 22px;
+}
+
+.footer-contact p {
+    margin: 0 0 10px;
+    max-width: 330px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.45;
+    color: #eeeeee;
+}
+
+.footer-contact strong {
+    font-weight: 700;
+    color: #ffffff;
+}/* =========================================================
+   CONTACT PAGE — SPACE BELOW HEADER
+========================================================= */
+
+.contact-page {
+    padding-top: 100px;
+}/* =========================================================
+   JASA LIFECARE
+   PRODUCT PAGE
+========================================================= */
+
+.products-header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+    z-index: 100;
+}
+
+.products-header-inner {
+    width: min(1180px, calc(100% - 60px));
+    min-height: 82px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.products-logo img {
+    width: 145px;
+    height: auto;
+    display: block;
+}
+
+.products-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.products-nav a {
+    color: #153f65;
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: color 0.25s ease;
+}
+
+.products-nav a:hover,
+.products-nav a.active {
+    color: #f36b21;
+}
+
+.products-contact-btn {
+    padding: 12px 22px;
+
+    border-radius: 25px;
+
+    background: #f36b21;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.products-contact-btn:hover {
+    background: #ff7d35;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.product-hero {
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(243, 107, 33, 0.10),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #fff8f3 0%,
+            #fff0e7 100%
+        );
+
+    border-bottom: 1px solid #f2d8c8;
+}
+
+.product-hero-inner {
+    width: min(1100px, calc(100% - 60px));
+    margin: auto;
+
+    padding: 65px 0 60px;
+}
+
+.product-breadcrumb {
+    display: flex;
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.product-breadcrumb a {
+    color: #e86627;
+    text-decoration: none;
+}
+
+.product-breadcrumb span {
+    color: #806d63;
+}
+
+
+.product-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 14px;
+
+    border: 1px solid #f2c6ae;
+    border-radius: 20px;
+
+    color: #a84e27;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.product-label span {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #f36b21;
+}
+
+
+.product-hero h1 {
+    margin: 18px 0 25px;
+
+    max-width: 700px;
+
+    color: #271b16;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(50px, 6vw, 72px);
+    line-height: 0.98;
+    font-weight: 700;
+}
+
+.product-hero h1 strong {
+    display: block;
+    color: #ed6422;
+}
+
+
+.product-hero-description {
+    max-width: 680px;
+
+    margin: 0 0 32px;
+
+    color: #6d5a50;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.product-statistics {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-top: 30px;
+}
+
+.product-stat {
+    min-height: 76px;
+
+    padding: 16px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #efc8b2;
+
+    border-radius: 12px;
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.65
+    );
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-stat strong {
+    color: #f36b21;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 24px;
+    line-height: 1;
+
+    margin-bottom: 7px;
+}
+
+.product-stat span {
+    color: #805f50;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 10px;
+    letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.product-download-primary,
+.product-download-secondary {
+    min-height: 44px;
+
+    padding: 0 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.product-download-primary {
+    gap: 10px;
+
+    background: #f36b21;
+    color: #ffffff;
+}
+
+.product-download-primary:hover {
+    background: #ff7b36;
+    transform: translateY(-2px);
+}
+
+.product-download-secondary {
+    border: 1px solid #e8bda4;
+
+    color: #6d4939;
+    background: rgba(255,255,255,0.6);
+}
+
+.product-download-secondary:hover {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   CATALOG
+========================================================= */
+
+.product-catalog {
+    background: #fbf8f6;
+
+    padding: 70px 0 90px;
+}
+
+.catalog-inner {
+    width: min(1140px, calc(100% - 60px));
+    margin: auto;
+}
+
+.catalog-heading {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.catalog-small-title {
+    color: #f36b21;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.catalog-heading h2 {
+    margin: 8px 0 8px;
+
+    color: #123e63;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 40px;
+}
+
+.catalog-heading p {
+    margin: 0;
+
+    color: #6c7885;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.product-search {
+    width: 100%;
+
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #aebfd0;
+    border-radius: 28px;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    margin-bottom: 18px;
+}
+
+.product-search input {
+    flex: 1;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+    outline: 0;
+
+    padding: 0 22px;
+
+    background: transparent;
+
+    color: #183e61;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+}
+
+.product-search input::placeholder {
+    color: #91a0af;
+}
+
+.product-search button {
+    width: 60px;
+    height: 100%;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.product-filters {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr auto;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.product-filters select {
+    height: 45px;
+
+    padding: 0 15px;
+
+    border: 1px solid #b6c8d8;
+
+    border-radius: 23px;
+
+    background: #ffffff;
+
+    color: #123e63;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.product-filters select:focus {
+    border-color: #f36b21;
+}
+
+.clear-filters {
+    padding: 0 18px;
+
+    height: 45px;
+
+    border: 1px solid #e3bda9;
+
+    border-radius: 23px;
+
+    background: transparent;
+
+    color: #b5572b;
+
+    cursor: pointer;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.clear-filters:hover {
+    background: #fff0e7;
+}
+
+
+/* =========================================================
+   RESULTS
+========================================================= */
+
+.catalog-results {
+    min-height: 22px;
+
+    margin: 20px 4px 10px;
+
+    color: #6e7881;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PRODUCT TABLE
+========================================================= */
+
+.product-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 30px rgba(
+            25,
+            50,
+            70,
+            0.06
+        );
+}
+
+.product-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 850px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.product-table thead {
+    background: #123e63;
+}
+
+.product-table th {
+    padding: 15px 18px;
+
+    color: #ffffff;
+
+    text-align: left;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.product-table td {
+    padding: 15px 18px;
+
+    border-bottom: 1px solid #eadfd9;
+
+    color: #17456d;
+
+    font-size: 13px;
+
+    vertical-align: middle;
+}
+
+.product-table tbody tr {
+    background: #ffffff;
+
+    transition:
+        background 0.2s ease;
+}
+
+.product-table tbody tr:nth-child(even) {
+    background: #fcf8f5;
+}
+
+.product-table tbody tr:hover {
+    background: #fff0e6;
+}
+
+.product-table .product-name {
+    color: #123e63;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   NO PRODUCTS
+========================================================= */
+
+.no-products {
+    display: none;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    border: 1px solid #eee0d8;
+}
+
+.no-products div {
+    font-size: 35px;
+}
+
+.no-products h3 {
+    margin: 12px 0 5px;
+
+    color: #263d51;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+.no-products p {
+    margin: 0;
+
+    color: #78838d;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.product-pagination {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+}
+
+.product-pagination button {
+    min-width: 38px;
+    height: 38px;
+
+    padding: 0 10px;
+
+    border: 1px solid #c7d4df;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #17456d;
+
+    cursor: pointer;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    transition: all 0.2s ease;
+}
+
+.product-pagination button:hover:not(:disabled) {
+    border-color: #f36b21;
+
+    color: #f36b21;
+}
+
+.product-pagination button.active {
+    background: #f36b21;
+
+    border-color: #f36b21;
+
+    color: #ffffff;
+}
+
+.product-pagination button:disabled {
+    opacity: 0.4;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.product-footer {
+    background: #241a15;
+
+    border-top: 5px solid #ff6b2c;
+}
+
+.product-footer-inner {
+    width: min(1180px, calc(100% - 60px));
+
+    margin: auto;
+
+    padding: 65px 0 55px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        0.8fr
+        1.2fr
+        0.9fr;
+
+    gap: 55px;
+}
+
+.product-footer-brand img {
+    width: 160px;
+
+    margin-bottom: 30px;
+}
+
+.product-footer-brand h3 {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 17px;
+}
+
+.product-footer-brand p {
+    max-width: 280px;
+
+    margin: 0;
+
+    color: #eeeeee;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+}
+
+.product-footer-column h4 {
+    margin: 0 0 22px;
+
+    color: #ff6b2c;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 19px;
+}
+
+.product-footer-column a,
+.product-footer-column p {
+    display: block;
+
+    margin: 0 0 13px;
+
+    color: #eeeeee;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+}
+
+.product-footer-column a:hover {
+    color: #ff6b2c;
+}
+
+.footer-resource-button {
+    padding: 12px 16px;
+
+    margin-bottom: 12px !important;
+
+    border-radius: 24px;
+
+    background: #ff6b2c;
+
+    text-align: center;
+
+    color: #ffffff !important;
+
+    font-weight: 600;
+}
+
+.footer-resource-button.outline {
+    background: transparent;
+
+    border: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.3
+    );
+}
+
+.product-footer-bottom {
+    border-top: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.1
+    );
+
+    padding: 20px;
+
+    text-align: center;
+
+    color: #eeeeee;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .products-nav {
+        display: none;
+    }
+
+    .product-statistics {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .product-filters {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .clear-filters {
+        width: 100%;
+    }
+
+    .product-footer-inner {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .products-header-inner {
+        width: calc(100% - 30px);
+
+        min-height: 70px;
+    }
+
+    .products-logo img {
+        width: 120px;
+    }
+
+    .products-contact-btn {
+        padding: 10px 15px;
+
+        font-size: 12px;
+    }
+
+
+    .product-hero-inner {
+        width: calc(100% - 30px);
+
+        padding: 45px 0;
+    }
+
+    .product-hero h1 {
+        font-size: 46px;
+    }
+
+    .product-hero-description {
+        font-size: 15px;
+    }
+
+    .product-statistics {
+        grid-template-columns: 1fr;
+    }
+
+    .product-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .product-download-primary,
+    .product-download-secondary {
+        width: 100%;
+    }
+
+
+    .catalog-inner {
+        width: calc(100% - 30px);
+    }
+
+    .product-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .product-footer-inner {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        width: calc(100% - 40px);
+    }
+
+}/* =========================================================
+   PRODUCTS PAGE — SIZE CONTROL
+   ========================================================= */
+
+/* Main product hero section */
+.product-hero {
+    padding: 70px 0 55px;
+}
+
+/* Breadcrumb */
+.product-hero .breadcrumb {
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+/* Small PRODUCT CATALOG label */
+.product-hero .product-badge {
+    font-size: 13px;
+    padding: 8px 16px;
+    margin-bottom: 22px;
+}
+
+/* Main heading */
+.product-hero h1 {
+    font-size: 64px;
+    line-height: 1.02;
+    margin: 0 0 28px;
+    max-width: 850px;
+}
+
+/* Orange second line if you have one */
+.product-hero h1 span {
+    font-size: inherit;
+}
+
+/* Description */
+.product-hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 760px;
+    margin-bottom: 38px;
+}
+
+/* Statistics cards */
+.product-hero .stats-grid {
+    gap: 16px;
+}
+
+.product-hero .stat-card {
+    min-height: 90px;
+    padding: 18px 20px;
+}
+
+.product-hero .stat-card strong {
+    font-size: 28px;
+}
+
+.product-hero .stat-card span {
+    font-size: 12px;
+}
+
+/* Buttons */
+.product-hero .hero-buttons {
+    margin-top: 28px;
+}
+
+.product-hero .hero-buttons a {
+    font-size: 15px;
+    padding: 14px 24px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .product-hero {
+        padding: 50px 25px 45px;
+    }
+
+    .product-hero h1 {
+        font-size: 48px;
+    }
+
+    .product-hero p {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .product-hero {
+        padding: 40px 20px;
+    }
+
+    .product-hero h1 {
+        font-size: 38px;
+        line-height: 1.05;
+    }
+
+    .product-hero p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .product-hero .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}/* =========================================================
+   PRODUCT PAGE - COMPACT HERO
+   ========================================================= */
+
+.product-page {
+    font-size: 14px;
+}
+
+/* Main product hero */
+.product-hero,
+.products-hero,
+.product-page-hero {
+    padding-top: 55px !important;
+    padding-bottom: 55px !important;
+}
+
+/* Container */
+.product-page-container,
+.products-container,
+.product-hero-container {
+    max-width: 1140px !important;
+    margin: 0 auto !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+/* Breadcrumb */
+.product-breadcrumb,
+.products-breadcrumb {
+    font-size: 14px !important;
+    margin-bottom: 28px !important;
+}
+
+/* Small PRODUCT CATALOG label */
+.product-eyebrow,
+.product-badge,
+.products-eyebrow {
+    font-size: 12px !important;
+    padding: 6px 14px !important;
+    margin-bottom: 18px !important;
+}
+
+/* Main heading */
+.product-hero h1,
+.products-hero h1 {
+    font-size: 58px !important;
+    line-height: 1.02 !important;
+    margin: 0 0 24px !important;
+    letter-spacing: -1.5px !important;
+}
+
+/* Description */
+.product-hero p,
+.products-hero p {
+    font-size: 18px !important;
+    line-height: 1.65 !important;
+    max-width: 700px !important;
+    margin-bottom: 30px !important;
+}
+
+/* Statistics */
+.product-stats,
+.products-stats {
+    gap: 16px !important;
+    margin-top: 25px !important;
+}
+
+.product-stat,
+.product-stat-card,
+.products-stat {
+    min-height: 78px !important;
+    padding: 16px 20px !important;
+    border-radius: 14px !important;
+}
+
+/* Numbers inside statistics */
+.product-stat strong,
+.product-stat-number,
+.product-stat-card strong,
+.products-stat strong {
+    font-size: 26px !important;
+    line-height: 1.1 !important;
+}
+
+/* Stat labels */
+.product-stat span,
+.product-stat-label,
+.product-stat-card span,
+.products-stat span {
+    font-size: 12px !important;
+}
+
+/* Buttons */
+.product-actions,
+.products-actions {
+    margin-top: 28px !important;
+    gap: 12px !important;
+}
+
+.product-actions a,
+.product-actions button,
+.products-actions a,
+.products-actions button {
+    min-height: 44px !important;
+    padding: 11px 22px !important;
+    font-size: 14px !important;
+    border-radius: 11px !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .product-hero h1,
+    .products-hero h1 {
+        font-size: 46px !important;
+    }
+
+    .product-hero p,
+    .products-hero p {
+        font-size: 16px !important;
+    }
+
+    .product-stats,
+    .products-stats {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .product-hero,
+    .products-hero,
+    .product-page-hero {
+        padding-top: 35px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .product-hero h1,
+    .products-hero h1 {
+        font-size: 38px !important;
+    }
+
+    .product-stats,
+    .products-stats {
+        grid-template-columns: 1fr !important;
+    }
+
+    .product-actions,
+    .products-actions {
+        flex-direction: column !important;
+    }
+
+    .product-actions a,
+    .product-actions button,
+    .products-actions a,
+    .products-actions button {
+        width: 100% !important;
+    }
 }

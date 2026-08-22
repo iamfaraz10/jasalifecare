@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Contact Us | Jasa Lifecare</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Jasa Lifecare">
+        </a>
+
+
+        <nav class="nav-menu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <div class="nav-dropdown">
+
+                <a href="#">
+                    Products
+                    <span></span>
+                </a>
+
+            </div>
+
+
+            <a href="#">
+                About Us
+            </a>
+
+
+            <a href="#">
+                Careers
+            </a>
+
+
+            <a href="contact.html" class="active">
+                Contact Us
+            </a>
+
+        </nav>
+
+
+        <button
+            class="mobile-menu"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     CONTACT PAGE
+===================================================== -->
+
+<main>
+
+<section class="contact-section contact-page">
+
+    <div class="contact-page-container">
+
+
+        <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
+
+        <div class="contact-page-header">
+
+            <h1>
+                Contact Jasa Lifecare
+            </h1>
+
+
+            <p>
+                Reach out to us for pharmaceutical inquiries,
+                partnerships, and support. Our team is here to
+                assist you with your healthcare needs.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CONTACT GRID
+        ================================================== -->
+
+        <div class="contact-page-grid">
+
+
+            <!-- =============================================
+                 FORM
+            ============================================== -->
+
+            <div class="contact-form-card">
+
+                <div class="contact-form-heading">
+
+                    <h2>
+                        Send Us a Message
+                    </h2>
+
+                    <span></span>
+
+                </div>
+
+
+                <!-- FORM -->
+
+                <form
+                    action="https://formspree.io/f/xnparbpw"
+                    method="POST"
+                    class="jasa-contact-form"
+                >
+
+
+                    <!-- COMPANY + CONTACT -->
+
+                    <div class="jasa-form-row">
+
+
+                        <div class="jasa-form-group">
+
+                            <label for="company">
+                                Company Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="company"
+                                name="Company Name"
+                                placeholder="e.g., ABC Pharmaceuticals"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="jasa-form-group">
+
+                            <label for="person">
+                                Contact Person *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="person"
+                                name="Contact Person"
+                                placeholder="e.g., John Smith"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- EMAIL + PHONE -->
+
+                    <div class="jasa-form-row">
+
+
+                        <div class="jasa-form-group">
+
+                            <label for="email">
+                                Email Address *
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="Email Address"
+                                placeholder="you@example.com"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="jasa-form-group">
+
+                            <label for="phone">
+                                Phone Number *
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="Phone Number"
+                                placeholder="10 digit number"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- COUNTRY -->
+
+                    <div class="jasa-form-group">
+
+                        <label for="country">
+                            Destination Country *
+                        </label>
+
+
+                        <select
+                            id="country"
+                            name="Destination Country"
+                            required
+                        >
+
+                            <option value="">
+                                Select your country
+                            </option>
+
+                            <option value="India">
+                                India
+                            </option>
+
+                            <option value="United Arab Emirates">
+                                United Arab Emirates
+                            </option>
+
+                            <option value="Saudi Arabia">
+                                Saudi Arabia
+                            </option>
+
+                            <option value="United States">
+                                United States
+                            </option>
+
+                            <option value="United Kingdom">
+                                United Kingdom
+                            </option>
+
+                            <option value="Nigeria">
+                                Nigeria
+                            </option>
+
+                            <option value="Kenya">
+                                Kenya
+                            </option>
+
+                            <option value="South Africa">
+                                South Africa
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- MESSAGE -->
+
+                    <div class="jasa-form-group">
+
+                        <label for="message">
+                            Message *
+                        </label>
+
+
+                        <textarea
+                            id="message"
+                            name="Message"
+                            placeholder="Please provide details about your inquiry..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- FORM BOTTOM -->
+
+                    <div class="jasa-form-bottom">
+
+
+                        <span>
+                            * Required fields
+                        </span>
+
+
+                        <div class="jasa-form-buttons">
+
+                            <button
+                                type="reset"
+                                class="jasa-clear-button"
+                            >
+                                Clear Form
+                            </button>
+
+
+                            <button
+                                type="submit"
+                                class="jasa-submit-button"
+                            >
+                                Submit Inquiry
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 CONTACT INFORMATION
+            ============================================== -->
+
+            <div class="jasa-contact-info">
+
+
+                <div class="jasa-contact-image"></div>
+
+
+                <div class="jasa-contact-overlay"></div>
+
+
+                <div class="jasa-contact-info-content">
+
+
+                    <h2>
+                        Send Us a Message
+                    </h2>
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="jasa-contact-item">
+
+                        <span>
+                            📍
+                        </span>
+
+                        <p>
+                            107, A-Wing, Sai Paradise CHS,
+                            Plot No. 100, Sector 1/S,
+                            Vijay Marg, Near Bharat Gas office,
+                            New Panvel, Panvel,
+                            Navi Mumbai - 410206
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="jasa-contact-item">
+
+                        <span>
+                            ✉
+                        </span>
+
+                        <p>
+                            jasapharma@gmail.com
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="jasa-contact-item">
+
+                        <span>
+                            ☎
+                        </span>
+
+                        <p>
+                            +91 9987579464
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- RESPONSE -->
+
+                    <div class="jasa-contact-item">
+
+                        <span>
+                            ◷
+                        </span>
+
+                        <p>
+                            We'll get back to you within 24 hours
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+
+        <div class="footer-brand">
+
+            <img
+                src="logo.png"
+                alt="Jasa Lifecare"
+            >
+
+            <p>
+                Jasa Lifecare
+            </p>
+
+            <span>
+                Advancing Global Healthcare Delivering
+                innovation, quality and trust worldwide.
+            </span>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h3>
+                QUICK LINKS
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="#">
+                Products
+            </a>
+
+            <a href="#">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h3>
+                CONTACT
+            </h3>
+
+            <p>
+                107, A-Wing, Sai Paradise CHS,
+                Plot No. 100, Sector 1/S,
+                Vijay Marg, Near Bharat Gas office,
+                New Panvel, Panvel,
+                Navi Mumbai - 410206
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                jasapharma@gmail.com
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                +91 9987579464
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h3>
+                RESOURCES
+            </h3>
+
+            <a href="#">
+                Company Profile
+            </a>
+
+            <a href="#">
+                Download Product List
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+        © 2026 Jasa Lifecare | All Rights Reserved
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
